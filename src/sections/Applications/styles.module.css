@@ -1,0 +1,71 @@
+.applicationsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  padding-top: 100px;
+}
+
+.applicationsSectionWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.applicationsSectionWrapper h2 {
+  color: var(--primary);
+}
+
+.applicatinsCardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.applicatinsCardsWrapper .card {
+  background-color: var(--secondary);
+  border-radius: 8px;
+  box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.147);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 4px 0px 0px rgb(196, 196, 196);
+  text-align: center;
+  aspect-ratio: 1/1;
+  max-width: 230px;
+  position: relative;
+}
+
+.applicatinsCardsWrapper .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.applicatinsCardsWrapper .card:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 330px) {
+  .applicatinsCardsWrapper {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+}

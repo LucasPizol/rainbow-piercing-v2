@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  color: white;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.header img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 5px solid var(--primary);
+  cursor: pointer;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .header nav {
+    display: none;
+  }
+}

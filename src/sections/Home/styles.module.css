@@ -1,0 +1,120 @@
+.homeSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    #ffffff 0%,
+    #b9b7bd 100%
+  );
+}
+
+.imgPiercingArgolaMotion {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  object-fit: cover;
+  width: 250px;
+}
+
+.imgPiercingArgolaMotion img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+}
+
+.imgPiercingArgola2Motion {
+  bottom: 0;
+  position: absolute;
+  right: 150px;
+  object-fit: cover;
+  width: 250px;
+}
+
+.imgPiercingArgola2Motion img {
+  position: absolute;
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+}
+
+.imgPiercingTransversalMotion {
+  top: -150px;
+  position: absolute;
+  right: 40px;
+  object-fit: cover;
+  width: 250px;
+}
+
+.imgPiercingTransversalMotion img {
+  position: absolute;
+  object-fit: cover;
+  width: 450px;
+  height: 450px;
+  transform: rotate(45deg);
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.content h1 {
+  font-size: 90px;
+  color: #6042a7;
+}
+
+.content h2 {
+  font-weight: 300;
+  font-size: 30px;
+  max-width: 600px;
+  color: #7a7683;
+}
+
+.content div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+@media (max-width: 1080px) {
+  .imgPiercingArgolaMotion {
+    top: 0;
+    left: -150px;
+  }
+  .imgPiercingArgolaMotion img {
+    width: 120px;
+  }
+
+  .imgPiercingArgola2Motion {
+    right: 0;
+    bottom: 0;
+  }
+  .imgPiercingArgola2Motion img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 60px;
+  }
+
+  .content h2 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,90 @@
+.feedbacksSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.feedbacksWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedbacksCardsWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
+
+.feedbacksCardsWrapper .card {
+  background-color: var(--secondary);
+  border-radius: 8px;
+  box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.147);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 4px 0px 0px rgb(196, 196, 196);
+  text-align: center;
+  position: relative;
+  padding-top: 60px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  top: 0;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  position: absolute;
+  border: 1px solid black;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars span {
+  color: #f1c40f;
+  text-shadow: 1px 1px 1px #0000006b;
+  font-size: 20px;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .feedbacksCardsWrapper {
+    overflow-x: auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  .feedbacksCardsWrapper .card {
+    min-width: 80vw;
+    box-shadow: 0 4px 15px 0px rgb(196, 196, 196);
+    min-height: 320px;
+  }
+
+  .feedbacksCardsWrapper .card p:nth-child(3) {
+    flex:1
+  }
+}
