@@ -98,6 +98,7 @@
   }
   .imgPiercingArgolaMotion img {
     width: 120px;
+    height: 120px;
   }
 
   .imgPiercingArgola2Motion {
@@ -106,6 +107,8 @@
   }
   .imgPiercingArgola2Motion img {
     width: 120px;
+    height: 120px;
+
   }
 }
 
