@@ -86,7 +86,7 @@ export const Feedbacks = () => {
         href="https://instagram.com/rainbowpiercing04"
         styles={{
           motion: {
-            maxWidth: 300,
+            maxWidth: 350,
             width: "100%",
             display: "flex",
             justifyContent: "center",

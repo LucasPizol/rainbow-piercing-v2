@@ -35,6 +35,7 @@ export const Applications = () => {
           style={{
             textAlign: "center",
             fontSize: "24px",
+            color:"#363636"
           }}
         >
           A satisfação de nossos(as) clientes é a parte mais importante do

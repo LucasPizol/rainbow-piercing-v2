@@ -1,7 +1,7 @@
 "use client";
 
 import "./styles.css";
-import React, { useRef } from "react";
+import React from "react";
 import {
   useScroll,
   useSpring,
