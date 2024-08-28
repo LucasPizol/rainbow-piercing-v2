@@ -80,7 +80,7 @@ export const HomeSection = () => {
             maxWidth: 600,
           }}
         >
-          Há mais de 4 anos no mercado, a Rainbow Piercing é referência em
+          Há mais de 3 anos no mercado sendo referência em
           qualidade e atendimento
         </TypographySubtitle>
         <div>
