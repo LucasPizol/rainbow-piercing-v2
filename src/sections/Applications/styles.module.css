@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 20px;
   padding-top: 100px;
 }
 
@@ -26,7 +26,6 @@
   justify-content: center;
   gap: 32px;
   width: 100%;
-  padding: 20px;
 }
 
 .applicatinsCardsWrapper .card {
@@ -52,9 +51,8 @@
   object-position: middle;
 }
 
-@media (max-width: 330px) {
+@media (max-width: 450px) {
   .applicatinsCardsWrapper {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }
