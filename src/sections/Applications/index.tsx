@@ -12,7 +12,6 @@ import aplicacao07 from "@/assets/aplicacoes/aplicacao-07.jpeg";
 import aplicacao08 from "@/assets/aplicacoes/aplicacao-08.jpeg";
 import aplicacao09 from "@/assets/aplicacoes/aplicacao-09.jpeg";
 import aplicacao10 from "@/assets/aplicacoes/aplicacao-10.jpeg";
-import aplicacao11 from "@/assets/aplicacoes/aplicacao-11.jpeg";
 import Image from "next/image";
 
 const images = [
