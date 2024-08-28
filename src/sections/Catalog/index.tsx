@@ -55,7 +55,16 @@ export const Catalog = () => {
           ))}
         </div>
 
-        <Button>BAIXAR CATÁLOGO</Button>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button>BAIXAR CATÁLOGO</Button>
+        </div>
       </div>
     </section>
   );

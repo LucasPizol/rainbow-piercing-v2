@@ -11,6 +11,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     button: CSSProperties;
     motion: CSSProperties;
   };
+  href?: string;
 }
 
 export const Button = ({
@@ -18,6 +19,7 @@ export const Button = ({
   size,
   children,
   styles,
+  href,
   ...rest
 }: ButtonProps) => {
   return (
@@ -25,7 +27,12 @@ export const Button = ({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      style={styles?.motion}
+      style={{
+        textDecoration: "none",
+        ...styles?.motion,
+      }}
+      href={href}
+      target="_blank"
     >
       <button
         className={`button ${variant} ${size}`}

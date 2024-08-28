@@ -83,6 +83,7 @@ export const Feedbacks = () => {
 
       <Button
         variant="primary"
+        href="https://instagram.com/rainbowpiercing04"
         styles={{
           motion: {
             maxWidth: 300,

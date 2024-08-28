@@ -84,7 +84,11 @@ export const HomeSection = () => {
           qualidade e atendimento
         </TypographySubtitle>
         <div>
-          <Button variant="primary" size="lg">
+          <Button
+            variant="primary"
+            size="lg"
+            href="https://instagram.com/rainbowpiercing04"
+          >
             ENTRAR EM CONTATO
           </Button>
           <Button variant="secondary" size="lg">

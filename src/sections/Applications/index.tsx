@@ -35,6 +35,7 @@ export const Applications = () => {
         <TypographyBody
           style={{
             textAlign: "center",
+            fontSize: "24px",
           }}
         >
           A satisfação de nossos(as) clientes é a parte mais importante do
@@ -56,7 +57,9 @@ export const Applications = () => {
           ))}
         </div>
       </div>
-      <Button variant="primary">VER TODAS</Button>
+      <Button variant="primary"
+        href="https://instagram.com/rainbowpiercing04"
+      >VER TODAS</Button>
     </section>
   );
 };
