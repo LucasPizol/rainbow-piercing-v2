@@ -1,6 +1,6 @@
 import { Button } from "@/components/button";
 import styles from "./styles.module.css";
-import { TypographyBody, TypographyTitle } from "@/components/typography";
+import { TypographyBody, TypographySubtitle, TypographyTitle } from "@/components/typography";
 import produto01 from "@/assets/produtos/produto-01.jpeg";
 import produto02 from "@/assets/produtos/produto-02.jpeg";
 import produto03 from "@/assets/produtos/produto-03.jpeg";
@@ -34,7 +34,7 @@ export const Catalog = () => {
   return (
     <section className={styles.catalogSection} id="catalogo">
       <div className={styles.catalogSectionWrapper}>
-        <TypographyTitle>NOSSOS PRODUTOS</TypographyTitle>
+        <TypographySubtitle>NOSSOS PRODUTOS</TypographySubtitle>
         <TypographyBody>
           Conheça nossos produtos e escolha o que mais combina com você. Baixe
           nosso catálogo e veja todas as opções disponíveis.
