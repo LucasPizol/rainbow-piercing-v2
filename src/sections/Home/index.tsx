@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export const HomeSection = () => {
   return (
-    <section className={styles.homeSection}>
+    <section className={styles.homeSection} id="inicio">
       <Motion
         initial={{ scale: 0 }}
         animate={{ rotate: 270, scale: 1 }}

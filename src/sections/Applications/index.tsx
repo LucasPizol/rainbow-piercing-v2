@@ -29,7 +29,7 @@ const images = [
 ];
 export const Applications = () => {
   return (
-    <section className={styles.applicationsSection}>
+    <section className={styles.applicationsSection} id="aplicacoes">
       <div className={styles.applicationsSectionWrapper}>
         <TypographySubtitle>APLICAÇÕES</TypographySubtitle>
         <TypographyBody

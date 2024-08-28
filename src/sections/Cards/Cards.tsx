@@ -1,6 +1,5 @@
 import { SVG } from "@/components/svg";
 import styles from "./styles.module.css";
-import { motion } from "framer-motion";
 import { TypographyBody } from "@/components/typography";
 import { Motion } from "@/components/motion";
 
@@ -25,7 +24,7 @@ const cardsContent = [
 
 export const Cards = () => {
   return (
-    <section className={styles.cardsSection}>
+    <section className={styles.cardsSection} id="qualidades">
       <div className={styles.cardsWrapper}>
         {cardsContent.map((card, index) => (
           <Motion

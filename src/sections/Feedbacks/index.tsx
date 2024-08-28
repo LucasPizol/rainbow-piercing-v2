@@ -28,7 +28,7 @@ const feedbacks = [
 
 export const Feedbacks = () => {
   return (
-    <section className={styles.feedbacksSection}>
+    <section className={styles.feedbacksSection} id="feedbacks">
       <div className={styles.feedbacksWrapper}>
         <TypographySubtitle
           style={{

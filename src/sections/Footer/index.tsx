@@ -15,11 +15,11 @@ export const Footer = () => {
       />
 
       <nav>
-        <a>Início</a>
-        <a>Qualidades</a>
-        <a>Catálogo</a>
-        <a>Aplicações</a>
-        <a>Feedbacks</a>
+        <a href="#inicio">Início</a>
+        <a href="#qualidades">Qualidades</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#feedbacks">Feedbacks</a>
       </nav>
 
       <div>

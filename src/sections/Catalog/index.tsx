@@ -32,7 +32,7 @@ const images = [
 
 export const Catalog = () => {
   return (
-    <section className={styles.catalogSection}>
+    <section className={styles.catalogSection} id="catalogo">
       <div className={styles.catalogSectionWrapper}>
         <TypographyTitle>NOSSOS PRODUTOS</TypographyTitle>
         <TypographyBody>
