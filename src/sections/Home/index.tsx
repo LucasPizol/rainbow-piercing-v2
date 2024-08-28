@@ -80,7 +80,7 @@ export const HomeSection = () => {
             maxWidth: 600,
           }}
         >
-          Há mais de 3 anos no mercado sendo referência em
+          Há 3 anos sendo referência em
           qualidade e atendimento
         </TypographySubtitle>
         <div>
