@@ -25,6 +25,7 @@
   margin-top: 80px;
   flex-direction: column;
   padding: 40px 20px;
+  padding-top: 0px;
   gap: 20px;
   max-width: 1200px;
   height: 100%;
