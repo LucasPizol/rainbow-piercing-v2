@@ -101,8 +101,9 @@ export const Materials = () => {
       }}
     >
       <ParallaxText baseVelocity={-5}>
-        {duplicated.map((material) => (
+        {duplicated.map((material, index) => (
           <TypographyBody
+            key={`material-${material}-${index}`}
             style={{
               fontWeight: 300,
             }}
