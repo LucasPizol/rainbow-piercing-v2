@@ -57,9 +57,9 @@ export const Applications = () => {
           ))}
         </div>
       </div>
-      <Button variant="primary"
-        href="https://instagram.com/rainbowpiercing04"
-      >VER TODAS</Button>
+      <Button variant="primary" href="https://instagram.com/rainbowpiercing04">
+        VER TODAS
+      </Button>
     </section>
   );
 };
