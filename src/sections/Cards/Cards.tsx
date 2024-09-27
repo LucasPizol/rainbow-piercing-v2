@@ -5,19 +5,19 @@ import { Motion } from "@/components/motion";
 
 const cardsContent = [
   {
-    title: "Produtos de qualidade",
-    content: "This is the content of card 1",
+    title: "Piercings de qualidade",
+    content: "Os melhores piercings do mercado",
     icon: SVG.Certified,
   },
   {
     title: "O melhor atendimento",
-    content: "This is the content of card 2",
+    content: "Te tratamos como você merece",
     icon: SVG.Help,
     type: "primary",
   },
   {
     title: "Entrega rápida",
-    content: "This is the content of card 3",
+    content: "Receba seu pedido em casa",
     icon: SVG.Delivery,
   },
 ];

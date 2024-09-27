@@ -64,4 +64,8 @@
   .products {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
+
+  .catalogSectionWrapper h2{
+    text-align: start;
+  }
 }

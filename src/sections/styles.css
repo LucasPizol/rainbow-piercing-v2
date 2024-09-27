@@ -2,26 +2,27 @@ html {
   scroll-behavior: smooth;
 }
 
-
-.parallax {
-  overflow: hidden;
+.paralax-text {
   display: flex;
   flex-wrap: nowrap;
-  width: 100%;
-}
-
-.parallax .scroller {
-  font-weight: 600;
-  font-size: 64px;
+  word-break: keep-all;
   white-space: nowrap;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 45px;
-  align-items: center;
-  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: start;
+  animation: slide 5s infinite linear;
+  user-select: none;
 }
 
-.parallax span {
-  display: block;
-  margin-right: 30px;
+@keyframes slide {
+  100% {
+    transform: translateX(calc(-100% - 30px));
+  }
+}
+
+@media (max-width: 768px) {
+  .paralax-text {
+    gap: 30px;
+    animation: slide 4.6s linear infinite;
+  }
 }

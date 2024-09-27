@@ -5,7 +5,8 @@
   height: 95vh;
   color: white;
   position: relative;
-  overflow: hidden;
+  clip: rect(auto, auto, auto, auto);
+
   background: radial-gradient(
     circle,
     rgba(2, 0, 36, 1) 0%,

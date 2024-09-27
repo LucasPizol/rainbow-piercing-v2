@@ -25,7 +25,7 @@ export const Footer = () => {
                   display: "flex",
                   alignItems: "center",
                   textAlign: "start",
-                  gap: 4,
+                  gap: 8,
                   color: "#fff",
                   background: "#25d366",
                 },

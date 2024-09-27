@@ -80,8 +80,7 @@ export const HomeSection = () => {
             maxWidth: 600,
           }}
         >
-          Há 3 anos sendo referência em
-          qualidade e atendimento
+          Há 3 anos sendo referência em qualidade e atendimento
         </TypographySubtitle>
         <div>
           <Button
@@ -90,9 +89,6 @@ export const HomeSection = () => {
             href="https://instagram.com/rainbowpiercing04"
           >
             ENTRAR EM CONTATO
-          </Button>
-          <Button variant="secondary" size="lg">
-            ACESSAR CATÁLOGO
           </Button>
         </div>
       </div>
