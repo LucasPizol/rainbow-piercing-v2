@@ -98,9 +98,9 @@ export const SVG = {
         {props.isGradient && (
           <defs>
             <linearGradient id="grad2" x1="0%" x2="100%" y1="0%" y2="0%">
-              <stop offset="0%" stop-color="#833ab4" />
-              <stop offset="50%" stop-color="#fd1d1d" />
-              <stop offset="100%" stop-color="#fcb045" />
+              <stop offset="0%" stopColor="#833ab4" />
+              <stop offset="50%" stopColor="#fd1d1d" />
+              <stop offset="100%" stopColor="#fcb045" />
             </linearGradient>
           </defs>
         )}

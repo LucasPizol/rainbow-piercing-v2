@@ -1,27 +1,36 @@
-import { TypographyBody, TypographySubtitle } from "@/components/typography";
+import { TypographySubtitle } from "@/components/typography";
 import styles from "./styles.module.css";
 import { Button } from "@/components/button";
+import { CardAvatar } from "./Card/CardAvatar";
+import { CardTitle } from "./Card/CardTitle";
+import { CardDescription } from "./Card/CardDescription";
+import { CardRating } from "./Card/CardRating";
+import { Card } from "./Card/Card";
+
+import Girl01 from "@/assets/svg/Girl-01.svg";
+import Girl02 from "@/assets/svg/Girl-02.svg";
+import GirlPinkHair from "@/assets/svg/GirlPinkHair.svg";
 
 const feedbacks = [
   {
-    name: "John Doe",
+    name: "Adriana",
     feedback:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.",
-    avatar: "https://randomuser.me/api/portraits",
+      "Realmente, parece milagre! O meu conch, na mesma semana resolveou o problema com sua jóia!",
+    avatar: Girl01.src,
     date: "2021-09-01",
   },
   {
-    name: "John Doe",
+    name: "Samara",
     feedback:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.",
-    avatar: "https://randomuser.me/api/portraits",
+      "Eu quem lhe agradeço! Eu queria muito avaliar o serviço de vocês, pois são muito atenciosos, amei!",
+    avatar: Girl02.src,
     date: "2021-09-01",
   },
   {
-    name: "John Doe",
+    name: "Elizabete",
     feedback:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo.",
-    avatar: "https://randomuser.me/api/portraits",
+      "Eu amei, estão lindos! Vou arrumar vários clientes pra você!",
+    avatar: GirlPinkHair.src,
     date: "2021-09-01",
   },
 ];
@@ -40,43 +49,19 @@ export const Feedbacks = () => {
 
         <div className={styles.feedbacksCardsWrapper}>
           {feedbacks.map((feedback, index) => (
-            <div className={styles.card} key={index}>
-              <div className={styles.avatar} />
-              <TypographyBody
-                style={{
-                  fontWeight: 700,
-                  fontSize: 20,
-                }}
-              >
-                {feedback.name}
-              </TypographyBody>
-              <TypographyBody
-                style={{
-                  textAlign: "start",
-                  paddingTop: 18,
-                }}
-              >
-                {feedback.feedback}
-              </TypographyBody>
-
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  alignItems: "center",
-                  width: "100%",
-                  paddingTop: 32,
-                }}
-              >
-                <div className={styles.stars}>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                </div>
-              </div>
-            </div>
+            <Card key={index}>
+              <CardAvatar>
+                <img
+                  style={{
+                    width: index === 0 ? "100%" : "80%",
+                  }}
+                  src={feedback.avatar}
+                />
+              </CardAvatar>
+              <CardTitle>{feedback.name}</CardTitle>
+              <CardDescription>{feedback.feedback}</CardDescription>
+              <CardRating stars={5} />
+            </Card>
           ))}
         </div>
       </div>
