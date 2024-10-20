@@ -57,7 +57,10 @@ export const Applications = () => {
           ))}
         </div>
       </div>
-      <Button variant="primary" href="https://instagram.com/rainbowpiercing04">
+      <Button
+        variant="primary"
+        href="https://api.whatsapp.com/send?phone=5535999422529&text=Ol%C3%A1!%20Gostaria%20de%20ver%20seu%20cat%C3%A1logo%20de%20piercings!"
+      >
         VER TODAS
       </Button>
     </section>

@@ -81,20 +81,9 @@ export const Catalog = () => {
                 marginTop: 20,
               },
             }}
-            href="https://instagram.com/rainbowpiercing04"
+            href="https://api.whatsapp.com/send?phone=5535999422529&text=Ol%C3%A1!%20Gostaria%20de%20ver%20seu%20cat%C3%A1logo%20de%20piercings!"
           >
-            <SVG.Instagram isGradient style={{ width: 20 }} />
-            <span
-              style={{
-                background:
-                  "linear-gradient(to right, #833ab4,#fd1d1d,#fcb045)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              QUERO VER MAIS!
-            </span>
+            <span style={{ color: "var(--primary)" }}>QUERO VER MAIS!</span>
           </Button>
         </div>
       </div>

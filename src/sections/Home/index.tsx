@@ -8,6 +8,7 @@ import { Button } from "@/components/button";
 import styles from "./styles.module.css";
 import { Motion } from "@/components/motion";
 import Image from "next/image";
+import { SVG } from "@/components/svg";
 
 export const HomeSection = () => {
   return (
@@ -86,9 +87,43 @@ export const HomeSection = () => {
           <Button
             variant="primary"
             size="lg"
-            href="https://instagram.com/rainbowpiercing04"
+            href="https://api.whatsapp.com/send?phone=5535999422529&text=Ol%C3%A1!%20Gostaria%20de%20ver%20seu%20cat%C3%A1logo%20de%20piercings!"
+            styles={{
+              button: {
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+              },
+              motion: {},
+            }}
           >
-            ENTRAR EM CONTATO
+            <SVG.Whatsapp style={{ width: 20, fill: "#fff" }} />
+            <span>ENTRAR EM CONTATO</span>
+          </Button>
+          <Button
+            size="lg"
+            href="https://instagram.com/rainbowpiercing04"
+            styles={{
+              button: {
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                fontWeight: 700,
+              },
+              motion: {},
+            }}
+          >
+            <SVG.Instagram isGradient style={{ width: 20, fill: "#fff" }} />
+            <span
+              style={{
+                background: "linear-gradient(90deg, #FF00B8 0%, #FF655B 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              VER PRODUTOS
+            </span>
           </Button>
         </div>
       </div>

@@ -28,6 +28,7 @@ export const Footer = () => {
                   gap: 8,
                   color: "#fff",
                   background: "#25d366",
+                  fontWeight: 700,
                 },
                 motion: {
                   marginTop: 20
@@ -36,7 +37,7 @@ export const Footer = () => {
               href="https://api.whatsapp.com/send?phone=5535999422529&text=Ol%C3%A1!%20Gostaria%20de%20ver%20seu%20cat%C3%A1logo%20de%20piercings!"
             >
               <SVG.Whatsapp fill="#fff" style={{ width: 20, color: "#fff" }} />
-              Entrar em contato
+              ENTRAR EM CONTATO
             </Button>
           </div>
           <iframe
