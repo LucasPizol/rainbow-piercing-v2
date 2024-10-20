@@ -81,7 +81,7 @@ export const HomeSection = () => {
             maxWidth: 600,
           }}
         >
-          Há 3 anos sendo referência em qualidade e atendimento
+          Há 3 anos sendo referência em qualidade e atendimento em Poços de Caldas.
         </TypographySubtitle>
         <div>
           <Button

@@ -15,7 +15,7 @@ export const Footer = () => {
             <div className={styles.mapDescriptionTop}>
               <TypographySubtitle>Onde estamos?</TypographySubtitle>
               <TypographyBody>
-                Nos localizamos na Rua São Paulo, 56, sala 35 no 2º andar. Como
+                Nos localizamos na Rua São Paulo, 56, sala 35 no 2º andar em Poços de Caldas/MG. Como
                 ponto de referência, é ao lado da Caixa Econômica Federal
               </TypographyBody>
             </div>

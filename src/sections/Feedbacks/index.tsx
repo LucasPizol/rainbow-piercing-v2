@@ -15,7 +15,7 @@ const feedbacks = [
   {
     name: "Adriana",
     feedback:
-      "Realmente, parece milagre! O meu conch, na mesma semana resolveou o problema com sua jóia!",
+      "Realmente, parece milagre! O meu conch, na mesma semana resolveu o problema com sua jóia!",
     avatar: Girl01.src,
     date: "2021-09-01",
   },
