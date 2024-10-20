@@ -25,17 +25,16 @@ export default function RootLayout({
         ></script>
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-TKVRS8F6MW"
+          src="https://www.googletagmanager.com/gtag/js?id=G-PH66SSNWFD"
         ></script>
+
         <script
           dangerouslySetInnerHTML={{
-            __html: `<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+            __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-gtag('config', 'G-TKVRS8F6MW');
-</script>`,
+  gtag('config', 'G-PH66SSNWFD');`,
           }}
         ></script>
       </head>
