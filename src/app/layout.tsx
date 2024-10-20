@@ -16,14 +16,6 @@ export default function RootLayout({
     <html lang="pt">
       <head>
         <script
-          type="text/javascript"
-          data-cmp-ab="1"
-          src="https://cdn.consentmanager.net/delivery/autoblocking/664eeacd41ece.js"
-          data-cmp-host="b.delivery.consentmanager.net"
-          data-cmp-cdn="cdn.consentmanager.net"
-          data-cmp-codesrc="16"
-        ></script>
-        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-PH66SSNWFD"
         ></script>
