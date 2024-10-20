@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Rainbow Piercing",
@@ -15,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
-      <Head>
+      <head>
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-TKVRS8F6MW"
@@ -31,7 +30,7 @@ gtag('config', 'G-TKVRS8F6MW');
 </script>`,
           }}
         ></script>
-      </Head>
+      </head>
       <body>{children}</body>
     </html>
   );
