@@ -29,6 +29,10 @@ export default function RootLayout({
   gtag('config', 'G-PH66SSNWFD');`,
           }}
         ></script>
+        <meta property="og:title" content="Rainbow Piercing | Poços de Caldas"></meta>
+        <meta property="og:url" content="https://www.rainbowpiercing.com.br/"></meta>
+        <meta property="og:site_name" content="Rainbow Piercing"></meta>
+        <meta property="og:type" content="website"></meta>
       </head>
       <body>{children}</body>
     </html>
