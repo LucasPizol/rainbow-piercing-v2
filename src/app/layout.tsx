@@ -1,11 +1,4 @@
-import type { Metadata } from "next";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "Rainbow Piercing - Poços de Caldas",
-  description:
-    "Os melhores piercings de Poços de Caldas e região. Adquira já o seu!",
-};
 
 export default function RootLayout({
   children,
@@ -16,10 +9,26 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <title>Rainbow Piercing - Poços de Caldas</title>
+        <title>Rainbow Piercing</title>
         <meta
           name="description"
-          content="Os melhores piercings de Poços de Caldas e região. Adquira já o seu!"
+          content="Piercings de alta qualidade – modelos exclusivos, hipoalergênicos e com aplicação profissional. Compre online ou agende sua visita"
+        />
+
+        <meta
+          name="keywords"
+          content="piercings, piercing, rainbow piercing, crazy, soul, piercings de qualidade, piercings hipoalergênicos, piercings exclusivos, piercings online, body piercing, agendamento de piercings"
+        />
+
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Rainbow Piercing" />
+        <meta property="og:region" content="Brasil" />
+        <meta property="og:url" content="https://www.rainbowpiercing.com.br/" />
+        <meta property="og:site_name" content="Rainbow Piercing" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:description"
+          content="Piercings de alta qualidade – modelos exclusivos, hipoalergênicos e com aplicação profissional. Compre online ou agende sua visita"
         />
 
         <script
@@ -36,16 +45,6 @@ export default function RootLayout({
   gtag('config', 'G-PH66SSNWFD');`,
           }}
         ></script>
-        <meta
-          property="og:title"
-          content="Rainbow Piercing | Poços de Caldas"
-        ></meta>
-        <meta
-          property="og:url"
-          content="https://www.rainbowpiercing.com.br/"
-        ></meta>
-        <meta property="og:site_name" content="Rainbow Piercing"></meta>
-        <meta property="og:type" content="website"></meta>
       </head>
       <body>{children}</body>
     </html>
