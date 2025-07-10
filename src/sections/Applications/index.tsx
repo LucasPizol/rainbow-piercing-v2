@@ -1,3 +1,5 @@
+"use client";
+
 import { TypographyBody, TypographySubtitle } from "@/components/typography";
 import styles from "./styles.module.css";
 import { Button } from "@/components/button";
@@ -13,6 +15,7 @@ import aplicacao08 from "@/assets/aplicacoes/aplicacao-08.jpeg";
 import aplicacao09 from "@/assets/aplicacoes/aplicacao-09.jpeg";
 import aplicacao10 from "@/assets/aplicacoes/aplicacao-10.jpeg";
 import Image from "next/image";
+import { event } from "@/analytics";
 
 const images = [
   aplicacao01,

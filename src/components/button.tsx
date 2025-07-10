@@ -1,5 +1,6 @@
 "use client";
 
+import { event, type Event } from "@/analytics";
 import { motion } from "framer-motion";
 import { CSSProperties } from "react";
 
@@ -12,6 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     motion: CSSProperties;
   };
   href?: string;
+  eventProps?: Event;
 }
 
 export const Button = ({
@@ -20,6 +22,7 @@ export const Button = ({
   children,
   styles,
   href,
+  eventProps,
   ...rest
 }: ButtonProps) => {
   return (
@@ -38,6 +41,20 @@ export const Button = ({
         className={`button ${variant} ${size}`}
         {...rest}
         style={styles?.button}
+        onClick={(ev) => {
+          const label =
+            eventProps?.label || (typeof children === "string" ? children : "");
+
+          if (label) {
+            event({
+              action: "click",
+              category: "cta_button",
+              label: label,
+            });
+          }
+
+          rest.onClick?.(ev);
+        }}
       >
         {children}
       </button>

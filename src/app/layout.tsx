@@ -22,7 +22,7 @@ export default function RootLayout({
 
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Rainbow Piercing" />
-        <meta property="og:region" content="Brasil" />
+        <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://www.rainbowpiercing.com.br/" />
         <meta property="og:site_name" content="Rainbow Piercing" />
         <meta property="og:type" content="article" />
