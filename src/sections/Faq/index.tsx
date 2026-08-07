@@ -37,7 +37,7 @@ const buildFaq = (years: number) => [
   {
     question: "Posso levar minha própria joia?",
     answer:
-      "Pode, mas conferimos o material e a medida antes. Se for algo que vá comprometer a cicatrização, a gente avisa com franqueza em vez de aplicar e deixar o problema para depois.",
+      "Não. Por segurança, a aplicação é feita só com joia do estúdio. Sem garantia de origem, material e esterilização, o risco de infecção e rejeição é alto demais para assumir. Depois da cicatrização, você troca pela joia que quiser.",
   },
   {
     question: "Vocês atendem menores de idade?",
