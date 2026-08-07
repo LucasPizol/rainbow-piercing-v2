@@ -1,108 +1,131 @@
-import { TypographySubtitle, TypographyTitle } from "@/components/typography";
+import Image from "next/image";
+
 import imgPercingArgola from "@/assets/piercing-argola.png";
 import imgPercingArgola2 from "@/assets/piercing-argola-2.png";
 import imgPiercingTransversal from "@/assets/piercing-transversal.png";
-import { motion } from "framer-motion";
 import { Button } from "@/components/button";
+import { Motion } from "@/components/motion";
+import { SVG } from "@/components/svg";
+import { HeroIntro } from "@/components/anim/HeroIntro";
+import { SplitHeading } from "@/components/anim/SplitHeading";
+import { HeroCanvas } from "@/components/three/HeroCanvas";
+import { site, yearsInBusiness } from "@/config/site";
 
 import styles from "./styles.module.css";
-import { Motion } from "@/components/motion";
-import Image from "next/image";
-import { SVG } from "@/components/svg";
+
+/** Imagens originais do hero — servem quem não roda WebGL ou pediu menos movimento. */
+const StaticJewelry = () => (
+  <>
+    <Motion
+      initial={{ scale: 0 }}
+      animate={{ rotate: 270, scale: 1 }}
+      transition={{ duration: 1, type: "spring", stiffness: 260, damping: 20 }}
+      className={styles.imgPiercingArgolaMotion}
+    >
+      <Image
+        width={300}
+        height={200}
+        src={imgPercingArgola.src}
+        alt=""
+        aria-hidden
+      />
+    </Motion>
+
+    <Motion
+      initial={{ scale: 0 }}
+      animate={{ rotate: 180, scale: 1 }}
+      transition={{
+        duration: 1,
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        delay: 0.5,
+      }}
+      className={styles.imgPiercingArgola2Motion}
+    >
+      <Image
+        width={300}
+        height={200}
+        src={imgPercingArgola2.src}
+        alt=""
+        aria-hidden
+      />
+    </Motion>
+
+    <Motion
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{
+        duration: 1,
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        delay: 1,
+      }}
+      className={styles.imgPiercingTransversalMotion}
+    >
+      <Image
+        width={300}
+        height={200}
+        src={imgPiercingTransversal.src}
+        alt=""
+        aria-hidden
+      />
+    </Motion>
+  </>
+);
 
 export const HomeSection = () => {
+  const years = yearsInBusiness();
+
   return (
     <section className={styles.homeSection} id="inicio">
-      <Motion
-        initial={{ scale: 0 }}
-        animate={{ rotate: 270, scale: 1 }}
-        transition={{
-          duration: 1,
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-        }}
-        className={styles.imgPiercingArgolaMotion}
-      >
-        <Image
-          width={300}
-          height={200}
-          src={imgPercingArgola.src}
-          alt="Piercing Argola"
-        />
-      </Motion>
+      <div className={styles.stage} aria-hidden>
+        <HeroCanvas fallback={<StaticJewelry />} />
+      </div>
 
-      <Motion
-        initial={{ scale: 0 }}
-        animate={{ rotate: 180, scale: 1 }}
-        transition={{
-          duration: 1,
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-          delay: 0.5,
-        }}
-        className={styles.imgPiercingArgola2Motion}
-      >
-        <Image
-          width={300}
-          height={200}
-          src={imgPercingArgola2.src}
-          alt="Piercing Argola"
-        />
-      </Motion>
+      <HeroIntro className={styles.content}>
+        <p className={styles.eyebrow} data-hero-item>
+          {site.city} · {site.state} — há {years} anos
+        </p>
 
-      <Motion
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{
-          duration: 1,
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-          delay: 1,
-        }}
-        className={styles.imgPiercingTransversalMotion}
-      >
-        <Image
-          width={300}
-          height={200}
-          src={imgPiercingTransversal.src}
-          alt="Piercing Argola"
-        />
-      </Motion>
+        <SplitHeading className="typography-title">
+          Piercing que cicatriza bem começa na joia certa
+        </SplitHeading>
 
-      <div className={styles.content}>
-        <TypographyTitle>RAINBOW PIERCING</TypographyTitle>
-        <TypographySubtitle
-          style={{
-            fontWeight: 300,
-            fontSize: 30,
-            maxWidth: 600,
-          }}
-        >
-          Há 3 anos sendo referência em qualidade e atendimento em Poços de Caldas.
-        </TypographySubtitle>
-        <div>
+        <p className={styles.lead} data-hero-item>
+          Titânio, aço cirúrgico, ouro e prata 925 aplicados com material
+          estéril e descartável. É a diferença entre cicatrizar em semanas e
+          brigar com o furo por meses.
+        </p>
+
+        <div className={styles.actions} data-hero-item>
           <Button
             variant="primary"
             size="lg"
-            href="https://api.whatsapp.com/send?phone=5535999422529&text=Ol%C3%A1!%20Gostaria%20de%20ver%20seu%20cat%C3%A1logo%20de%20piercings!"
+            href={site.links.whatsappBooking}
+            eventProps={{
+              action: "click",
+              category: "cta_button",
+              label: "hero_agendar_whatsapp",
+            }}
             styles={{
-              button: {
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-              },
+              button: { display: "flex", alignItems: "center", gap: 8 },
               motion: {},
             }}
           >
             <SVG.Whatsapp style={{ width: 20, fill: "#fff" }} />
-            <span>ENTRAR EM CONTATO</span>
+            <span>AGENDAR MINHA APLICAÇÃO</span>
           </Button>
+
           <Button
             size="lg"
-            href="https://instagram.com/rainbowpiercing04"
+            href={site.links.instagram}
+            eventProps={{
+              action: "click",
+              category: "cta_button",
+              label: "hero_instagram",
+            }}
             styles={{
               button: {
                 display: "flex",
@@ -114,19 +137,14 @@ export const HomeSection = () => {
             }}
           >
             <SVG.Instagram isGradient style={{ width: 20, fill: "#fff" }} />
-            <span
-              style={{
-                background: "linear-gradient(90deg, #FF00B8 0%, #FF655B 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              VER PRODUTOS
-            </span>
+            <span className={styles.gradientText}>VER O CATÁLOGO</span>
           </Button>
         </div>
-      </div>
+
+        <p className={styles.cue} data-hero-item>
+          Atendimento no WhatsApp — orçamento sem compromisso.
+        </p>
+      </HeroIntro>
     </section>
   );
 };

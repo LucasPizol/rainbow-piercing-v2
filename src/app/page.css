@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,49 +9,84 @@
 
 :root {
   --primary: #6042a7;
+  --primary-dark: #4a3283;
   --secondary: #f9f9f9;
   --tertiary: #7a7683;
+  --ink: #241a3d;
+  --ink-soft: #55506a;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Compensa o header fixo quando o link de âncora salta para a seção. */
+  scroll-padding-top: 96px;
+}
+
+body {
+  color: var(--ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .button {
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  color: #333;
-  cursor: pointer;
   display: inline-block;
-  font-size: 16px;
-  font-weight: 500;
   margin: 10px 0;
-  padding: 10px 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 0 rgb(196, 196, 196);
   transition: background-color 0.3s, color 0.3s;
-  box-shadow: 0 4px 0px 0px rgb(196, 196, 196);
-  border: none;
 }
 
 .button.primary {
   background-color: var(--primary);
   color: #fff;
-  box-shadow: 0 4px 0px 0px rgb(84, 43, 97);
+  box-shadow: 0 4px 0 0 var(--primary-dark);
 }
 
-.typography-subtitle {
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
+.button.lg {
+  padding: 15px 28px;
+  font-size: 17px;
 }
 
 .typography-title {
-  font-size: 90px;
+  font-size: clamp(38px, 6.2vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
-@media (max-width: 768px) {
-  .typography-subtitle {
-    font-size: 30px;
+.typography-subtitle {
+  font-size: clamp(30px, 4.4vw, 48px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  .typography-title {
-    font-size: 60px;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

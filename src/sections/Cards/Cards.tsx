@@ -1,23 +1,27 @@
+import { Reveal } from "@/components/anim/Reveal";
 import { SVG } from "@/components/svg";
+import { TypographyBody, TypographySubtitle } from "@/components/typography";
+
 import styles from "./styles.module.css";
-import { TypographyBody } from "@/components/typography";
-import { Motion } from "@/components/motion";
 
 const cardsContent = [
   {
-    title: "Piercings de qualidade",
-    content: "Os melhores piercings do mercado",
+    title: "Joia que o corpo aceita",
+    content:
+      "Titânio, aço cirúrgico, ouro e prata 925. Nada de bijuteria com níquel, que é o que inflama o furo e escurece em duas semanas.",
     icon: SVG.Certified,
   },
   {
-    title: "O melhor atendimento",
-    content: "Te tratamos como você merece",
+    title: "Medida antes do furo",
+    content:
+      "Marcamos, conferimos a anatomia e escolhemos a espessura certa da haste. Material descartável, do começo ao fim, na sua frente.",
     icon: SVG.Help,
     type: "primary",
   },
   {
-    title: "Entrega rápida",
-    content: "Receba seu pedido em casa",
+    title: "Acompanhamento até cicatrizar",
+    content:
+      "Você sai com as instruções de cuidado e o WhatsApp aberto. Qualquer coisa estranha na cicatrização, é só chamar.",
     icon: SVG.Delivery,
   },
 ];
@@ -25,18 +29,24 @@ const cardsContent = [
 export const Cards = () => {
   return (
     <section className={styles.cardsSection} id="qualidades">
-      <div className={styles.cardsWrapper}>
+      <Reveal className={styles.header} selector="h2, p" staggerBy={110}>
+        <TypographySubtitle className={styles.title}>
+          O que você leva além do piercing
+        </TypographySubtitle>
+        <TypographyBody className={styles.subtitle}>
+          Três coisas que separam uma aplicação bem feita de um problema de seis
+          meses.
+        </TypographyBody>
+      </Reveal>
+
+      <Reveal
+        className={styles.cardsWrapper}
+        selector={`.${styles.card}`}
+        staggerBy={130}
+        distance={44}
+      >
         {cardsContent.map((card, index) => (
-          <Motion
-            initial={{ opacity: 0, transform: "translateY(50px)" }}
-            whileInView={{
-              opacity: 1,
-              transform: "translateY(0)",
-              type: "spring",
-            }}
-            viewport={{
-              once: true,
-            }}
+          <div
             key={index}
             className={`${styles.card} ${
               card.type === "primary" ? styles.primary : ""
@@ -44,8 +54,8 @@ export const Cards = () => {
           >
             <card.icon
               style={{
-                width: 80,
-                height: 80,
+                width: 64,
+                height: 64,
                 alignSelf: "center",
                 fill: card.type === "primary" ? "#fff" : "var(--primary)",
               }}
@@ -54,15 +64,18 @@ export const Cards = () => {
             <TypographyBody
               style={{
                 fontWeight: 700,
-                fontSize: 20,
+                fontSize: 21,
+                lineHeight: 1.25,
               }}
             >
               {card.title}
             </TypographyBody>
-            <TypographyBody>{card.content}</TypographyBody>
-          </Motion>
+            <TypographyBody style={{ lineHeight: 1.55, opacity: 0.9 }}>
+              {card.content}
+            </TypographyBody>
+          </div>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 };

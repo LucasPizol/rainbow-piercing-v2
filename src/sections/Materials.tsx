@@ -1,61 +1,39 @@
 import "./styles.css";
-import React from "react";
+
+const MATERIALS = [
+  "Titânio",
+  "Aço Cirúrgico",
+  "Ouro",
+  "Prata 925",
+  "Material Descartável",
+];
 
 const MaterialsContent = () => (
   <>
-    <span>Titânio</span>
-    <span>Aço Cirúrgico</span>
-    <span>Ouro</span>
-    <span>Prata 925</span>
+    {MATERIALS.map((material) => (
+      <span key={material}>{material}</span>
+    ))}
   </>
 );
+
+/** Faixa em marquee: a primeira cópia é lida por leitores de tela, o resto é enfeite. */
+const MARQUEE_COPIES = 10;
 
 export const Materials = () => {
   return (
     <section
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: 100,
-        color: "white",
-        position: "relative",
-        background: "var(--primary)",
-        overflow: "hidden",
-        width: "100%",
-        gap: 30,
-      }}
+      className="materials-strip"
+      aria-label="Materiais que trabalhamos"
     >
-      <div className="paralax-text">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
-      <div className="paralax-text" aria-hidden="true">
-        <MaterialsContent />
-      </div>
+      {Array.from({ length: MARQUEE_COPIES }).map((_, index) => (
+        <div
+          key={index}
+          className="paralax-text"
+          aria-hidden={index > 0 || undefined}
+        >
+          <MaterialsContent />
+        </div>
+      ))}
     </section>
   );
 };

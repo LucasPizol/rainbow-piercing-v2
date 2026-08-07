@@ -1,10 +1,5 @@
-import { Button } from "@/components/button";
-import styles from "./styles.module.css";
-import {
-  TypographyBody,
-  TypographySubtitle,
-  TypographyTitle,
-} from "@/components/typography";
+import Image from "next/image";
+
 import produto01 from "@/assets/produtos/produto-01.jpeg";
 import produto02 from "@/assets/produtos/produto-02.jpeg";
 import produto03 from "@/assets/produtos/produto-03.jpeg";
@@ -17,8 +12,12 @@ import produto09 from "@/assets/produtos/produto-09.jpeg";
 import produto10 from "@/assets/produtos/produto-10.jpeg";
 import produto11 from "@/assets/produtos/produto-11.jpeg";
 import produto12 from "@/assets/produtos/produto-12.jpeg";
-import Image from "next/image";
-import { SVG } from "@/components/svg";
+import { Reveal } from "@/components/anim/Reveal";
+import { Button } from "@/components/button";
+import { TypographyBody, TypographySubtitle } from "@/components/typography";
+import { site } from "@/config/site";
+
+import styles from "./styles.module.css";
 
 const images = [
   produto01,
@@ -39,36 +38,43 @@ export const Catalog = () => {
   return (
     <section className={styles.catalogSection} id="catalogo">
       <div className={styles.catalogSectionWrapper}>
-        <TypographySubtitle>NOSSOS PIERCINGS</TypographySubtitle>
-        <TypographyBody>
-          Conheça nossos PIERCINGS e escolha o que mais combina com você. Baixe
-          nosso catálogo e veja todas as opções disponíveis.
-        </TypographyBody>
+        <Reveal className={styles.header} selector="h2, p" staggerBy={120}>
+          <TypographySubtitle>Escolha a sua joia</TypographySubtitle>
+          <TypographyBody>
+            Argolas, barbells, labrets e piercings com pedra — em titânio, aço
+            cirúrgico, ouro e prata 925. O catálogo completo, com preços, sai na
+            hora pelo WhatsApp.
+          </TypographyBody>
+        </Reveal>
 
-        <div className={styles.products}>
+        <Reveal
+          className={styles.products}
+          selector={`.${styles.product}`}
+          staggerBy={55}
+          distance={34}
+        >
           {images.map((image, index) => (
-            <div key={index} style={{ width: "100%", aspectRatio: "1/1" }}>
+            <div key={index} className={styles.product}>
               <Image
                 width={250}
                 height={250}
                 src={image}
-                alt={`Imagem produto piercing ${index}`}
+                alt={`Joia de piercing disponível no catálogo da ${site.name} — modelo ${index + 1}`}
                 placeholder="blur"
                 blurDataURL={image.src}
               />
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <Reveal className={styles.action}>
           <Button
+            href={site.links.whatsappCatalog}
+            eventProps={{
+              action: "click",
+              category: "cta_button",
+              label: "catalogo_whatsapp",
+            }}
             styles={{
               button: {
                 display: "flex",
@@ -77,15 +83,14 @@ export const Catalog = () => {
                 gap: 8,
                 fontWeight: 700,
               },
-              motion: {
-                marginTop: 20,
-              },
+              motion: { marginTop: 20 },
             }}
-            href="https://api.whatsapp.com/send?phone=5535999422529&text=Ol%C3%A1!%20Gostaria%20de%20ver%20seu%20cat%C3%A1logo%20de%20piercings!"
           >
-            <span style={{ color: "var(--primary)" }}>QUERO VER MAIS!</span>
+            <span style={{ color: "var(--primary)" }}>
+              RECEBER O CATÁLOGO COMPLETO
+            </span>
           </Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

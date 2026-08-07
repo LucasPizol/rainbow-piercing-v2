@@ -1,8 +1,4 @@
-"use client";
-
-import { TypographyBody, TypographySubtitle } from "@/components/typography";
-import styles from "./styles.module.css";
-import { Button } from "@/components/button";
+import Image from "next/image";
 
 import aplicacao01 from "@/assets/aplicacoes/aplicacao-01.jpeg";
 import aplicacao02 from "@/assets/aplicacoes/aplicacao-02.jpeg";
@@ -14,8 +10,12 @@ import aplicacao07 from "@/assets/aplicacoes/aplicacao-07.jpeg";
 import aplicacao08 from "@/assets/aplicacoes/aplicacao-08.jpeg";
 import aplicacao09 from "@/assets/aplicacoes/aplicacao-09.jpeg";
 import aplicacao10 from "@/assets/aplicacoes/aplicacao-10.jpeg";
-import Image from "next/image";
-import { event } from "@/analytics";
+import { Reveal } from "@/components/anim/Reveal";
+import { Button } from "@/components/button";
+import { TypographyBody, TypographySubtitle } from "@/components/typography";
+import { site } from "@/config/site";
+
+import styles from "./styles.module.css";
 
 const images = [
   aplicacao01,
@@ -29,42 +29,50 @@ const images = [
   aplicacao09,
   aplicacao10,
 ];
+
 export const Applications = () => {
   return (
     <section className={styles.applicationsSection} id="aplicacoes">
       <div className={styles.applicationsSectionWrapper}>
-        <TypographySubtitle>APLICAÇÕES</TypographySubtitle>
-        <TypographyBody
-          style={{
-            textAlign: "center",
-            fontSize: "24px",
-            color: "#363636",
-          }}
-        >
-          A satisfação de nossos(as) clientes é a parte mais importante do
-          negócio!
-        </TypographyBody>
+        <Reveal className={styles.header} selector="h2, p" staggerBy={120}>
+          <TypographySubtitle>Aplicações de verdade</TypographySubtitle>
+          <TypographyBody className={styles.subtitle}>
+            Fotos de clientes reais, tiradas no estúdio. É o melhor jeito de
+            você ver o acabamento antes de marcar.
+          </TypographyBody>
+        </Reveal>
 
-        <div className={styles.applicatinsCardsWrapper}>
+        <Reveal
+          className={styles.applicatinsCardsWrapper}
+          selector={`.${styles.card}`}
+          staggerBy={60}
+          distance={34}
+        >
           {images.map((image, index) => (
             <div className={styles.card} key={index}>
               <Image
                 width={250}
                 height={250}
                 src={image}
-                alt={`Imagem produto piercing ${index}`}
+                alt={`Aplicação de piercing feita na ${site.name} — foto ${index + 1}`}
                 placeholder="blur"
                 blurDataURL={image.src}
               />
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
+
       <Button
         variant="primary"
-        href="https://api.whatsapp.com/send?phone=5535999422529&text=Ol%C3%A1!%20Gostaria%20de%20ver%20seu%20cat%C3%A1logo%20de%20piercings!"
+        href={site.links.instagram}
+        eventProps={{
+          action: "click",
+          category: "cta_button",
+          label: "aplicacoes_instagram",
+        }}
       >
-        VER TODAS
+        VER MAIS NO INSTAGRAM
       </Button>
     </section>
   );

@@ -1,4 +1,69 @@
+import type { Metadata } from "next";
+
+import { site, yearsInBusiness } from "@/config/site";
+
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-PH66SSNWFD";
+const SITE_URL = "https://www.rainbowpiercing.com.br/";
+
+/** Muda sozinho a cada virada de ano — nada de descrição envelhecida no <head>. */
+const description = () =>
+  `Piercings em titânio, aço cirúrgico, ouro e prata 925 com aplicação estéril em ${site.city}/${site.state}. Há ${yearsInBusiness()} anos aplicando com material descartável e acompanhamento até cicatrizar.`;
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${site.name} — piercings e aplicação em ${site.city}/${site.state}`,
+    template: `%s | ${site.name}`,
+  },
+  description: description(),
+  keywords: [
+    "piercing",
+    "piercings",
+    `piercing ${site.city}`,
+    "aplicação de piercing",
+    "piercing titânio",
+    "piercing aço cirúrgico",
+    "piercing hipoalergênico",
+    "colocar piercing",
+    site.name.toLowerCase(),
+  ],
+  robots: { index: true, follow: true },
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: `${site.name} — piercings e aplicação em ${site.city}/${site.state}`,
+    description: description(),
+    url: SITE_URL,
+    siteName: site.name,
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: description(),
+  },
+};
+
+/** Dados estruturados para a busca local — o ano de fundação sai da mesma config. */
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: site.name,
+  url: SITE_URL,
+  foundingDate: String(site.foundingYear),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: `${site.address.street}, ${site.address.complement}`,
+    addressLocality: site.city,
+    addressRegion: site.state,
+    postalCode: site.address.zip,
+    addressCountry: "BR",
+  },
+  sameAs: [site.links.instagram],
+  description: description(),
+};
 
 export default function RootLayout({
   children,
@@ -9,31 +74,19 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <title>Rainbow Piercing</title>
-        <meta
-          name="description"
-          content="Piercings de alta qualidade – modelos exclusivos, hipoalergênicos e com aplicação profissional. Compre online ou agende sua visita"
-        />
+        <meta name="theme-color" content="#6042a7" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
 
-        <meta
-          name="keywords"
-          content="piercings, piercing, rainbow piercing, crazy, soul, piercings de qualidade, piercings hipoalergênicos, piercings exclusivos, piercings online, body piercing, agendamento de piercings"
-        />
-
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Rainbow Piercing" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="og:url" content="https://www.rainbowpiercing.com.br/" />
-        <meta property="og:site_name" content="Rainbow Piercing" />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:description"
-          content="Piercings de alta qualidade – modelos exclusivos, hipoalergênicos e com aplicação profissional. Compre online ou agende sua visita"
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
         />
 
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-PH66SSNWFD"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         ></script>
 
         <script
@@ -41,8 +94,7 @@ export default function RootLayout({
             __html: `window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-PH66SSNWFD');`,
+  gtag('config', '${GA_MEASUREMENT_ID}');`,
           }}
         ></script>
       </head>

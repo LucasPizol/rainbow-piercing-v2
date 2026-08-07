@@ -1,90 +1,71 @@
 .feedbacksSection {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
-  flex-direction: column;
   width: 100%;
+  padding: 96px 0 96px;
+  background: #ffffff;
 }
 
 .feedbacksWrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
   max-width: 1200px;
   width: 100%;
+}
+
+.header {
+  display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  color: var(--primary);
+  text-wrap: balance;
+}
+
+.subtitle {
+  color: #7a7683;
+  font-size: clamp(16px, 2vw, 19px);
 }
 
 .feedbacksCardsWrapper {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px;
   width: 100%;
+  padding: 0 20px;
   margin-top: 90px;
-  margin-bottom: 80px;
+  margin-bottom: 56px;
 }
 
-.feedbacksCardsWrapper .card {
-  background-color: var(--secondary);
-  border-radius: 8px;
-  box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.147);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-  flex: 1;
-  box-shadow: 0 4px 0px 0px rgb(196, 196, 196);
-  text-align: center;
-  position: relative;
-  padding-top: 60px;
-}
-
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  top: 0;
-  transform: translateY(-50%);
-  margin: 0 auto;
-  position: absolute;
-  border: 1px solid black;
-}
-
-.stars {
-  display: flex;
-  gap: 4px;
-}
-
-.stars span {
-  color: #f1c40f;
-  text-shadow: 1px 1px 1px #0000006b;
-  font-size: 20px;
-  padding: 0;
+.role {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
+  .feedbacksSection {
+    padding: 72px 0;
+  }
+
   .feedbacksCardsWrapper {
     overflow-x: auto;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 40px;
-  }
-
-  .feedbacksCardsWrapper .card {
-    min-width: 80vw;
-    box-shadow: 0 4px 15px 0px rgb(196, 196, 196);
-    min-height: 320px;
-  }
-
-  .feedbacksCardsWrapper .card p:nth-child(3) {
-    flex:1
+    padding: 50px 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 32px;
+    scroll-snap-type: x mandatory;
   }
 }
